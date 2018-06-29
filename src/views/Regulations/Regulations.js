@@ -51,60 +51,67 @@ class Regulations extends Component {
       <div className="animated fadeIn">
         
         <Row>
-          <Col xs="12" md="6">
+          <Col>
             <Card>
               <CardHeader>
                 <strong>Add Legislation</strong>
               </CardHeader>
               <CardBody>
-                <Form action="" method="post" encType="multipart/form-data" className="form-horizontal">
+              <Form action="" method="post" encType="multipart/form-data" className="form-horizontal">
+                <Row>
+                  <Col xs="6">
+                    <FormGroup row>
+                        <Col md="4">
+                          <Label htmlFor="text-input">Legislation name</Label>
+                        </Col>
+                        <Col xs="12" md="8">
+                          <Input type="text" id="text-input" name="text-input" placeholder="E.g. MiFID II, Securitsation..." />
+                        </Col>
+                      </FormGroup>
+                    </Col>
+                  <Col xs="6">
+                    <FormGroup row>
+                        <Col md="4">
+                          <Label htmlFor="date-input">Date coming into force</Label>
+                        </Col>
+                        <Col xs="12" md="8">
+                          <Input type="date" id="date-input" name="date-input" placeholder="date" />
+                        </Col>
+                      </FormGroup>                
+                  </Col>
+                </Row>
+
+
+
                   <FormGroup row>
-                    <Col md="3">
-                      <Label htmlFor="text-input">Legislation name</Label>
-                    </Col>
-                    <Col xs="12" md="9">
-                      <Input type="text" id="text-input" name="text-input" placeholder="Text" />
-                      <FormText color="muted">E.g. MiFID II, Securitsation, Basel III Reform...</FormText>
-                    </Col>
-                  </FormGroup>
-                  <FormGroup row>
-                    <Col md="3">
-                      <Label htmlFor="date-input">Date coming into force</Label>
-                    </Col>
-                    <Col xs="12" md="9">
-                      <Input type="date" id="date-input" name="date-input" placeholder="date" />
-                    </Col>
-                  </FormGroup>                
-                  <FormGroup row>
-                    <Col md="3">
+                    <Col md="2">
                       <Label htmlFor="textarea-input">High-level summary</Label>
                     </Col>
-                    <Col xs="12" md="9">
-                      <Input type="textarea" name="textarea-input" id="textarea-input" rows="9"
+                    <Col xs="12" md="10">
+                      <Input type="textarea" name="textarea-input" id="textarea-input" rows="4"
                              placeholder="Please give a quick summary of what the legislation is about..." />
                     </Col>
                   </FormGroup>
                   <FormGroup row>
-                    <Col md="3">
+                    <Col md="2">
                       <Label htmlFor="select">Regulatory body</Label>
                     </Col>
-                    <Col md="9">
+                    <Col md="10">
                       <Input type="select" name="multiple-select" id="multiple-select" multiple>
-                        <option value="0">Please select the regulatory body behind the legislation</option>
-                        <option value="1">ESMA</option>
-                        <option value="2">US Department of Justice</option>
-                        <option value="3">France AMF</option>
-                        <option value="4">Malta MFSA</option>
-                        <option value="5">PRA</option>
+                        <option value="0">ESMA</option>
+                        <option value="1">US Department of Justice</option>
+                        <option value="2">France AMF</option>
+                        <option value="3">Malta MFSA</option>
+                        <option value="4">PRA</option>
                       </Input>
                     </Col>
                   </FormGroup>
 
                   <FormGroup row>
-                    <Col md="3">
-                      <Label htmlFor="file-multiple-input">`Attachment(s)`</Label>
+                    <Col md="2">
+                      <Label htmlFor="file-multiple-input">Attachment(s)</Label>
                     </Col>
-                    <Col xs="12" md="9">
+                    <Col xs="12" md="10">
                       <Input type="file" id="file-multiple-input" name="file-multiple-input" multiple />
                     </Col>
                   </FormGroup>
