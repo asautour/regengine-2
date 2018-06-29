@@ -119,8 +119,8 @@ class Regulations extends Component {
               </CardBody>
 
               <CardFooter>
-                <Button type="button" size="md" color="primary"> Submit </Button>
-                <Button type="button" class="btn btn-secondary btn-md"> Cancel </Button>
+                <button type="button" class="btn btn-outline-primary"> Submit </button>
+                <button type="button" class="btn btn-outline-secondary"> Cancel </button>
               </CardFooter>
             </Card>
           </Col>
