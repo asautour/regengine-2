@@ -1,5 +1,5 @@
 import React from 'react';
-import Loadable from 'react-loadable'
+import Loadable from 'react-loadable';
 
 import AdminLayout from './containers/AdminLayout';
 
@@ -25,7 +25,12 @@ const Regulations = Loadable({
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
-  { path: '/admin', exact: true, name: 'Admin', component: Regulations },
+  {
+    path: '/', exact: true, name: 'Home', component: AdminLayout,
+  },
+  {
+    path: '/admin', exact: true, name: 'Admin', component: Regulations,
+  },
   { path: '/admin/regulations', name: 'Regulations', component: Regulations },
 ];
 
