@@ -16,10 +16,7 @@ class RegulationsList extends Component {
     };
   }
 
-  toggle(tab) {
-    console.log(tab);
-    console.log(this.state.activeTab);
-    
+  toggle(tab) {    
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab
@@ -29,6 +26,7 @@ class RegulationsList extends Component {
 
   renderListGroupItem(regulation,i) {
     return <ListGroupItem 
+      key={regulation._id}
       onClick={() => (this.toggle(i))} 
       action 
       active={this.state.activeTab === i}
@@ -39,10 +37,10 @@ class RegulationsList extends Component {
 
   render() {
     const regulations = [
-      {name:'MiFID II',summary:'MiFID II summary'},
-      {name:'Securitisation',summary:'Securitisation summary'},
-      {name:'FRTB',summary:'FRTB summary'},
-      {name:'PSD 2',summary:'PSD 2 summary'}
+      {_id:'1', name:'MiFID II',summary:'MiFID II summary'},
+      {_id:'2', name:'Securitisation',summary:'Securitisation summary'},
+      {_id:'3', name:'FRTB',summary:'FRTB summary'},
+      {_id:'4', name:'PSD 2',summary:'PSD 2 summary'}
     ]
     return (
       <div className="animated fadeIn">
@@ -67,8 +65,8 @@ class RegulationsList extends Component {
                     <TabContent activeTab={this.state.activeTab}>
                     {             
                       regulations.map((regulation, index) => (
-                        <TabPane tabId={index} >
-                          <RegulationItem regulation={regulation}/>
+                        <TabPane tabId={index} key={regulation._id}>
+                          <RegulationItem regulation={regulation} />
                         </TabPane>
                       ))
                     }

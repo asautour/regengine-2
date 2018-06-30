@@ -67,7 +67,7 @@ class Regulations extends Component {
 
         {/* Popup to add a legislation */}
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" onClick={this.toggleAddLegislation}>
+        <button type="button" className="btn btn-primary" data-toggle="modal" onClick={this.toggleAddLegislation}>
           Add legislation
         </button>
         <Modal isOpen={this.state.modal} toggle={this.toggleAddLegislation} className="modal-dialog modal-lg">
