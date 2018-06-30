@@ -2,43 +2,50 @@ import React, { Component } from 'react';
 import { Badge, Card, CardBody, CardHeader, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Row, TabContent, TabPane } from 'reactstrap';
 import RegulationItem from './RegulationItem';
 
-import '../../App.css'
+import '../../App.css';
 
 const regulations = [
-  {_id:'1', name:'MiFID II',summary:'MiFID II summary'},
-  {_id:'2', name:'Securitisation',summary:'Securitisation summary'},
-  {_id:'3', name:'FRTB',summary:'FRTB summary'},
-  {_id:'4', name:'PSD 2',summary:'PSD 2 summary'}
-]
+  {
+    _id: '1', name: 'MiFID II', summary: 'MiFID II summary', dueDate: '03/01/2018',
+  },
+  {
+    _id: '2', name: 'Securitisation', summary: 'Securitisation summary', dueDate: '31/01/2019',
+  },
+  {
+    _id: '3', name: 'FRTB', summary: 'FRTB summary', dueDate: '03/01/2022',
+  },
+  {
+    _id: '4', name: 'PSD 2', summary: 'PSD 2 summary', dueDate: '30/06/2019',
+  },
+];
 
 class RegulationsList extends Component {
-  
   constructor(props) {
     super(props);
-    
+
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: 1
+      activeTab: 1,
     };
   }
 
-  toggle(tab) {    
+  toggle(tab) {
     if (this.state.activeTab !== tab) {
       this.setState({
-        activeTab: tab
+        activeTab: tab,
       });
     }
   }
 
-  renderListGroupItem(regulation,i) {
-    return <ListGroupItem 
+  renderListGroupItem(regulation, i) {
+    return (<ListGroupItem
       key={regulation._id}
-      onClick={() => (this.toggle(i))} 
-      action 
+      onClick={() => (this.toggle(i))}
+      action
       active={this.state.activeTab === i}
     >
       {regulation.name}
-    </ListGroupItem>
+            </ListGroupItem>);
   }
 
   render() {
@@ -48,13 +55,13 @@ class RegulationsList extends Component {
           <Col>
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Available regulations</strong>
+                <i className="fa fa-align-justify" /><strong>Available regulations</strong>
               </CardHeader>
               <CardBody>
                 <Row>
                   <Col xs="4">
                     <ListGroup id="list-tab" role="tablist" >
-                    {             
+                      {
                       regulations.map((regulation, index) => (
                         this.renderListGroupItem(regulation, index)
                       ))
@@ -63,7 +70,7 @@ class RegulationsList extends Component {
                   </Col>
                   <Col xs="8">
                     <TabContent activeTab={this.state.activeTab}>
-                    {             
+                      {
                       regulations.map((regulation, index) => (
                         <TabPane tabId={index} key={regulation._id}>
                           <RegulationItem regulation={regulation} />
