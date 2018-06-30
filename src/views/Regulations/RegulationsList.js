@@ -4,6 +4,12 @@ import RegulationItem from './RegulationItem';
 
 import '../../App.css'
 
+const regulations = [
+  {_id:'1', name:'MiFID II',summary:'MiFID II summary'},
+  {_id:'2', name:'Securitisation',summary:'Securitisation summary'},
+  {_id:'3', name:'FRTB',summary:'FRTB summary'},
+  {_id:'4', name:'PSD 2',summary:'PSD 2 summary'}
+]
 
 class RegulationsList extends Component {
   
@@ -36,12 +42,6 @@ class RegulationsList extends Component {
   }
 
   render() {
-    const regulations = [
-      {_id:'1', name:'MiFID II',summary:'MiFID II summary'},
-      {_id:'2', name:'Securitisation',summary:'Securitisation summary'},
-      {_id:'3', name:'FRTB',summary:'FRTB summary'},
-      {_id:'4', name:'PSD 2',summary:'PSD 2 summary'}
-    ]
     return (
       <div className="animated fadeIn">
         <Row>
