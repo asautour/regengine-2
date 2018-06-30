@@ -1,1 +1,11 @@
 
+.regulations {
+    min-height: 60%;
+    max-height: 60%;
+    color: #F00;
+    overflow: hidden;
+}
+
+.app {
+    overflow: hidden;
+}

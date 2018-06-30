@@ -25,6 +25,7 @@ import {
   Modal, ModalBody, ModalFooter, ModalHeader,
   Row,
 } from 'reactstrap';
+import RegulationsList from './RegulationsList';
 
 class Regulations extends Component {
   constructor(props) {
@@ -60,6 +61,12 @@ class Regulations extends Component {
 
       <div>
 
+        {/* List of all available legislations */}
+        <RegulationsList />
+        
+
+        {/* Popup to add a legislation */}
+
         <button type="button" class="btn btn-primary" data-toggle="modal" onClick={this.toggleAddLegislation}>
           Add legislation
         </button>
@@ -79,7 +86,7 @@ class Regulations extends Component {
                               <Label htmlFor="text-input">Legislation name</Label>
                             </Col>
                             <Col xs="12" md="8">
-                              <Input type="text" id="text-input" name="text-input" placeholder="E.g. MiFID II, Securitsation..." />
+                              <Input type="text" id="text-input" name="text-input" placeholder="E.g. MiFID II, Securitisation..." />
                             </Col>
                           </FormGroup>
                         </Col>
@@ -101,7 +108,7 @@ class Regulations extends Component {
                         </Col>
                         <Col xs="12" md="10">
                           <Input type="textarea" name="textarea-input" id="textarea-input" rows="4"
-                                placeholder="Please give a quick summary of what the legislation is about..." />
+                                placeholder="Please write up a quick summary of what the legislation is about..." />
                         </Col>
                       </FormGroup>
                       <FormGroup row>
