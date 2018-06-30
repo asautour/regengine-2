@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Badge, Card, CardBody, CardHeader, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Row, TabContent, TabPane } from 'reactstrap';
-import RegulationItem from './RegulationItem';
+import RegulationsListItem from './RegulationsListItem';
 
 import '../../App.css';
 
@@ -73,7 +73,7 @@ class RegulationsList extends Component {
                       {
                       regulations.map((regulation, index) => (
                         <TabPane tabId={index} key={regulation._id}>
-                          <RegulationItem regulation={regulation} />
+                          <RegulationsListItem regulation={regulation} />
                         </TabPane>
                       ))
                     }

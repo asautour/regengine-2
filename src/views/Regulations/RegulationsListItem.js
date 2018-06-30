@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Button, Col, Input, Label, Row } from 'reactstrap';
 
-export default class RegulationIteam extends Component {
+export default class RegulationListIteam extends Component {
   render() {
     const { regulation } = this.props;
 
     return (
       <div>
-        {/* <Form action="" method="post" encType="multipart/form-data" className="form-horizontal"> */}
         <Row>
           <Col xs="2"><Label htmlFor="text-input">Legislation name</Label></Col>
           <Col xs="4"><Input type="text" id="text-input" name="text-input" value={regulation.name} /></Col>
