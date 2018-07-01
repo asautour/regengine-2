@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Col, Input, Label, Row } from 'reactstrap';
+import { Col, Input, Label, Row } from 'reactstrap';
 
 export default class RegulationListIteam extends Component {
   render() {

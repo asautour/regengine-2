@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Badge, Card, CardBody, CardFooter, CardHeader, Col, Row, Collapse, Fade } from 'reactstrap';
-import { AppSwitch } from '@coreui/react'
+import { AppSwitch } from '@coreui/react';
 
 class Cards extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Cards extends Component {
     this.state = {
       collapse: true,
       fadeIn: true,
-      timeout: 300
+      timeout: 300,
     };
   }
 
@@ -20,7 +20,7 @@ class Cards extends Component {
   }
 
   toggleFade() {
-    this.setState((prevState) => { return { fadeIn: !prevState }});
+    this.setState(prevState => ({ fadeIn: !prevState }));
   }
 
   render() {
@@ -52,7 +52,7 @@ class Cards extends Component {
           <Col xs="12" sm="6" md="4">
             <Card>
               <CardHeader>
-                <i className="fa fa-check float-right"></i>Card with icon
+                <i className="fa fa-check float-right" />Card with icon
               </CardHeader>
               <CardBody>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
@@ -65,7 +65,7 @@ class Cards extends Component {
             <Card>
               <CardHeader>
                 Card with switch
-                <AppSwitch className={'float-right mb-0'} label color={'info'} defaultChecked size={'sm'}/>
+                <AppSwitch className="float-right mb-0" label color="info" defaultChecked size="sm" />
               </CardHeader>
               <CardBody>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
@@ -379,9 +379,9 @@ class Cards extends Component {
                 <CardHeader>
                   Card actions
                   <div className="card-header-actions">
-                    <a href="#" className="card-header-action btn btn-setting"><i className="icon-settings"></i></a>
-                    <a className="card-header-action btn btn-minimize" data-target="#collapseExample" onClick={this.toggle}><i className="icon-arrow-up"></i></a>
-                    <a className="card-header-action btn btn-close" onClick={this.toggleFade}><i className="icon-close"></i></a>
+                    <a href="/" className="card-header-action btn btn-setting"><i className="icon-settings" /></a>
+                    <a className="card-header-action btn btn-minimize" data-target="#collapseExample" onClick={this.toggle}><i className="icon-arrow-up" /></a>
+                    <a className="card-header-action btn btn-close" onClick={this.toggleFade}><i className="icon-close" /></a>
                   </div>
                 </CardHeader>
                 <Collapse isOpen={this.state.collapse} id="collapseExample">

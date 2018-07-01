@@ -1,26 +1,11 @@
 import React, { Component } from 'react';
 import {
-  Badge,
-  Button,
-  ButtonDropdown,
   Card,
   CardBody,
-  CardFooter,
-  CardHeader,
   Col,
-  Collapse,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  Fade,
+  Input,
   Form,
   FormGroup,
-  FormText,
-  FormFeedback,
-  Input,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
   Label,
   Modal, ModalBody, ModalFooter, ModalHeader,
   Row,
@@ -38,7 +23,7 @@ class Regulations extends Component {
       collapse: true,
       fadeIn: true,
       timeout: 300,
-      modal: false
+      modal: false,
     };
   }
 
@@ -47,7 +32,7 @@ class Regulations extends Component {
   }
 
   toggleFade() {
-    this.setState((prevState) => { return { fadeIn: !prevState }});
+    this.setState(prevState => ({ fadeIn: !prevState }));
   }
 
   toggleAddLegislation() {
@@ -63,7 +48,7 @@ class Regulations extends Component {
 
         {/* List of all available legislations */}
         <RegulationsList />
-        
+
 
         {/* Popup to add a legislation */}
 
@@ -78,8 +63,8 @@ class Regulations extends Component {
                 <Col>
                   <Card>
                     <CardBody>
-                    <Form action="" method="post" encType="multipart/form-data" className="form-horizontal">
-                      <Row>
+                      <Form action="" method="post" encType="multipart/form-data" className="form-horizontal">
+                        <Row>
                         <Col xs="6">
                           <FormGroup row>
                             <Col md="4">
@@ -92,26 +77,31 @@ class Regulations extends Component {
                         </Col>
                         <Col xs="6">
                           <FormGroup row>
-                              <Col md="4">
-                                <Label htmlFor="date-input">Date coming into force</Label>
-                              </Col>
-                              <Col xs="12" md="8">
-                                <Input type="date" id="date-input" name="date-input" placeholder="date" />
-                              </Col>
-                            </FormGroup>                
+                            <Col md="4">
+                              <Label htmlFor="date-input">Date coming into force</Label>
+                            </Col>
+                            <Col xs="12" md="8">
+                              <Input type="date" id="date-input" name="date-input" placeholder="date" />
+                            </Col>
+                          </FormGroup>
                         </Col>
                       </Row>
 
-                      <FormGroup row>
+                        <FormGroup row>
                         <Col md="2">
                           <Label htmlFor="textarea-input">High-level summary</Label>
                         </Col>
                         <Col xs="12" md="10">
-                          <Input type="textarea" name="textarea-input" id="textarea-input" rows="4"
-                                placeholder="Please write up a quick summary of what the legislation is about..." />
+                          <Input
+                            type="textarea"
+                            name="textarea-input"
+                            id="textarea-input"
+                            rows="4"
+                            placeholder="Please write up a quick summary of what the legislation is about..."
+                          />
                         </Col>
                       </FormGroup>
-                      <FormGroup row>
+                        <FormGroup row>
                         <Col md="2">
                           <Label htmlFor="select">Regulatory body</Label>
                         </Col>
@@ -126,7 +116,7 @@ class Regulations extends Component {
                         </Col>
                       </FormGroup>
 
-                      <FormGroup row>
+                        <FormGroup row>
                         <Col md="2">
                           <Label htmlFor="file-multiple-input">Attachment(s)</Label>
                         </Col>
@@ -134,21 +124,20 @@ class Regulations extends Component {
                           <Input type="file" id="file-multiple-input" name="file-multiple-input" multiple />
                         </Col>
                       </FormGroup>
-                    </Form>
-                  </CardBody>
-              </Card>
-              </Col>
-            </Row>
-          </div>
-        </ModalBody>
-        <ModalFooter>
-          <button type="button" class="btn btn-outline-primary" onClick={this.toggleAddLegislation}> Submit </button>{' '}
-          <button type="button" class="btn btn-outline-secondary" onClick={this.toggleAddLegislation}> Cancel </button>
-        </ModalFooter>
-      </Modal>
+                      </Form>
+                    </CardBody>
+                  </Card>
+                </Col>
+              </Row>
+            </div>
+          </ModalBody>
+          <ModalFooter>
+            <button type="button" className="btn btn-outline-primary" onClick={this.toggleAddLegislation}> Submit </button>{' '}
+            <button type="button" className="btn btn-outline-secondary" onClick={this.toggleAddLegislation}> Cancel </button>
+          </ModalFooter>
+        </Modal>
 
-      <div className="animated fadeIn">    
-      </div>
+        <div className="animated fadeIn" />
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Badge, Card, CardBody, CardHeader, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Row, TabContent, TabPane } from 'reactstrap';
+import { Card, CardBody, CardHeader, Col, ListGroup, ListGroupItem, Row, TabContent, TabPane } from 'reactstrap';
 import RegulationsListItem from './RegulationsListItem';
 
 import '../../App.css';
@@ -45,7 +45,7 @@ class RegulationsList extends Component {
       active={this.state.activeTab === i}
     >
       {regulation.name}
-            </ListGroupItem>);
+    </ListGroupItem>);
   }
 
   render() {

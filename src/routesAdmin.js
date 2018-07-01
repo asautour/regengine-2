@@ -8,16 +8,6 @@ function Loading() {
   return <div>Loading...</div>;
 }
 
-const Charts = Loadable({
-  loader: () => import('./views/Charts'),
-  loading: Loading,
-});
-
-const Dashboard = Loadable({
-  loader: () => import('./views/Dashboard'),
-  loading: Loading,
-});
-
 const Regulations = Loadable({
   loader: () => import('./views/Regulations'),
   loading: Loading,
