@@ -31,7 +31,12 @@ class Login extends Component {
                     </InputGroup>
                     <Row>
                       <Col xs="6">
-                        <Button color="primary" className="px-4" onClick={this.props.handler}>Login</Button>
+                        <Button
+                          color="primary"
+                          className="px-4"
+                          onClick={() => this.props.handler(true)}
+                        >Login
+                        </Button>
                       </Col>
                       <Col xs="6" className="text-right">
                         <Button color="link" className="px-0">Forgot password?</Button>

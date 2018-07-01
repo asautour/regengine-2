@@ -9,7 +9,13 @@ export default class RegulationListIteam extends Component {
       <div>
         <Row>
           <Col xs="2"><Label htmlFor="text-input">Legislation name</Label></Col>
-          <Col xs="4"><Input type="text" id="text-input" name="text-input" value={regulation.name} /></Col>
+          <Col xs="4"><Input
+            type="text"
+            id="text-input"
+            name="text-input"
+            value={regulation.name}
+          />
+          </Col>
           <Col xs="2"><Label htmlFor="date-input">Date coming into force</Label></Col>
           <Col xs="4"><Input type="date" id="date-input" name="date-input" value={regulation.dueDate} /></Col>
         </Row>

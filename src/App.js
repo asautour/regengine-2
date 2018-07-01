@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import { Button, Card, CardBody, CardGroup, Col, Container, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 
 import './App.css';
 // Styles
@@ -40,7 +39,7 @@ class App extends Component {
   render() {
     if (!this.state.isAuthenticated) {
       return (
-        <Login handler={this.handler} />
+        <Login handler={this.handler.bind(this)} />
       );
     }
     return (
