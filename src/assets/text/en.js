@@ -1,0 +1,10 @@
+export const LABEL_NAME = 'Name';
+export const LABEL_EFFECTIVE_ON = 'Effective on';
+export const LABEL_HL_SUMMARY = 'High-level summary';
+export const LABEL_REGULATORY_BODY = 'Regulatory body';
+export const LABEL_ATTACHMENTS = 'Attachment(s)';
+export const LABEL_SAVE_CHANGES = 'Save changes';
+export const LABEL_SUBMIT = 'Submit';
+export const LABEL_CANCEL = 'Cancel';
+export const PLACEHOLDER_REG_SUMMARY = 'Please write up a quick summary of what the legislation is about...';
+export const PLACEHOLDER_REG_NAME = 'E.g. MiFID II, Securitisation...';

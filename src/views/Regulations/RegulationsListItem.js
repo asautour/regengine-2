@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Col, Input, Label, Row } from 'reactstrap';
+import { Col, Input, Label, Row, Button } from 'reactstrap';
+import { LABEL_NAME, LABEL_EFFECTIVE_ON, LABEL_HL_SUMMARY, LABEL_REGULATORY_BODY, LABEL_ATTACHMENTS,
+  LABEL_SAVE_CHANGES } from '../../assets/text/en';
 
 export default class RegulationListIteam extends Component {
   render() {
@@ -8,7 +10,7 @@ export default class RegulationListIteam extends Component {
     return (
       <div>
         <Row>
-          <Col xs="2"><Label htmlFor="text-input">Legislation name</Label></Col>
+          <Col xs="2"><Label htmlFor="text-input">{LABEL_NAME}</Label></Col>
           <Col xs="4"><Input
             type="text"
             id="text-input"
@@ -16,11 +18,11 @@ export default class RegulationListIteam extends Component {
             value={regulation.name}
           />
           </Col>
-          <Col xs="2"><Label htmlFor="date-input">Date coming into force</Label></Col>
+          <Col xs="2"><Label htmlFor="date-input">{LABEL_EFFECTIVE_ON}</Label></Col>
           <Col xs="4"><Input type="date" id="date-input" name="date-input" value={regulation.dueDate} /></Col>
         </Row>
         <Row>
-          <Col xs="2"><Label htmlFor="textarea-input">High-level summary</Label></Col>
+          <Col xs="2"><Label htmlFor="textarea-input">{LABEL_HL_SUMMARY}</Label></Col>
           <Col xs="10">
             <Input
               type="textarea"
@@ -32,7 +34,7 @@ export default class RegulationListIteam extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs="2"><Label htmlFor="select">Regulatory body</Label></Col>
+          <Col xs="2"><Label htmlFor="select">{LABEL_REGULATORY_BODY}</Label></Col>
           <Col xs="10">
             <Input type="select" name="multiple-select" id="multiple-select" multiple>
               <option value="0" selected="false">ESMA</option>
@@ -44,9 +46,11 @@ export default class RegulationListIteam extends Component {
           </Col>
         </Row>
         <Row>
-          <Col xs="2"><Label htmlFor="file-multiple-input">Attachment(s)</Label></Col>
+          <Col xs="2"><Label htmlFor="file-multiple-input">{LABEL_ATTACHMENTS}</Label></Col>
           <Col xs="10"><Input type="file" id="file-multiple-input" name="file-multiple-input" multiple /></Col>
         </Row>
+        <Button type="submit" className="btn btn-outline-primary">{LABEL_SAVE_CHANGES}</Button>
+
       </div>
     );
   }
