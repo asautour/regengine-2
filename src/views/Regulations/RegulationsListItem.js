@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Col, Input, Label, Row, Button } from 'reactstrap';
 import { LABEL_NAME, LABEL_EFFECTIVE_ON, LABEL_HL_SUMMARY, LABEL_REGULATORY_BODY, LABEL_ATTACHMENTS,
   LABEL_SAVE_CHANGES } from '../../assets/text/en';
+import { regBodies } from './RegulationsData';
 
 export default class RegulationListIteam extends Component {
   render() {
@@ -37,11 +38,7 @@ export default class RegulationListIteam extends Component {
           <Col xs="2"><Label htmlFor="select">{LABEL_REGULATORY_BODY}</Label></Col>
           <Col xs="10">
             <Input type="select" name="multiple-select" id="multiple-select" multiple>
-              <option value="0" selected="false">ESMA</option>
-              <option value="1" selected="true">US Department of Justice</option>
-              <option value="2" selected="true">France AMF</option>
-              <option value="3">Malta MFSA</option>
-              <option value="4">PRA</option>
+              { regBodies.map((body, index) => <option value={index}>{body}</option>)}
             </Input>
           </Col>
         </Row>
