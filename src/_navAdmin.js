@@ -11,6 +11,11 @@ export default {
       icon: 'icon-docs',
     },
     {
+      name: 'Texts',
+      url: '/admin/texts',
+      icon: 'icon-book-open',
+    },
+    {
       name: 'Users',
       url: '/admin/users',
       icon: 'icon-people',

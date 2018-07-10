@@ -13,6 +13,11 @@ const Regulations = Loadable({
   loading: Loading,
 });
 
+const Texts = Loadable({
+  loader: () => import('./views/Texts'),
+  loading: Loading,
+});
+
 const Users = Loadable({
   loader: () => import('./views/Users/Users'),
   loading: Loading,
@@ -32,6 +37,7 @@ const routes = [
     path: '/admin', exact: true, name: 'Admin', component: Regulations,
   },
   { path: '/admin/regulations', name: 'Regulations', component: Regulations },
+  { path: '/admin/texts', name: 'Texts', component: Texts },
   {
     path: '/admin/users', exact: true, name: 'Users', component: Users,
   },

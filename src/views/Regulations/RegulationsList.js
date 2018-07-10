@@ -29,9 +29,9 @@ class RegulationsList extends Component {
       onClick={() => (this.toggle(i))}
       action
       active={this.state.activeTab === i}
-    >
-      {regulation.name}
-            </ListGroupItem>);
+    >{regulation.name}
+            </ListGroupItem>
+    );
   }
 
   render() {
@@ -58,7 +58,7 @@ class RegulationsList extends Component {
                     <TabContent activeTab={this.state.activeTab}>
                       {
                       regData.map((regulation, index) => (
-                        <TabPane tabId={index} key={regulation._id}>
+                        <TabPane tabId={index} key={regulation._id} >
                           <RegulationsListItem regulation={regulation} />
                         </TabPane>
                       ))
