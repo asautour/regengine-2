@@ -1,8 +1,7 @@
 import React, { Component, Link } from 'react';
 import { Col, Input, Label, Row, Button, Form, FormGroup } from 'reactstrap';
-import { LABEL_NAME, LABEL_HL_SUMMARY, LABEL_REGULATORY_BODY, LABEL_ATTACHMENT,
-  LABEL_SUBMIT, LABEL_CANCEL, PLACEHOLDER_REG_SUMMARY, PLACEHOLDER_TEXT_NAME, LABEL_ADD_TEXT,
-  LABEL_LINK_TO_ORIGINAL, PLACEHOLDER_HTTP_LINK, LABEL_SAVE_CHANGES } from '../../assets/text/en';
+import { LABEL_NAME, LABEL_REGULATORY_BODY, LABEL_ATTACHMENT, LABEL_SUBMIT, LABEL_CANCEL, LABEL_ADD_TEXT,
+  LABEL_LINK_TO_ORIGINAL, LABEL_SAVE_CHANGES } from '../../assets/text/en';
 import { regBodies } from '../Regulations/RegulationsData';
 import { txtData } from './TextsData';
 
@@ -11,6 +10,8 @@ export default class TextListIteam extends Component {
     super(props);
 
     this.toggleEdit = this.toggleEdit.bind(this);
+    this.viewText = this.viewText.bind(this);
+
     this.state = {
       edit: false,
     };
@@ -18,6 +19,10 @@ export default class TextListIteam extends Component {
 
   toggleEdit() {
     this.setState({ edit: !this.state.edit });
+  }
+
+  viewText() {
+
   }
 
   render() {
@@ -96,6 +101,12 @@ export default class TextListIteam extends Component {
             <Col md="2"><Label htmlFor="file-input">{LABEL_ATTACHMENT}</Label></Col>
             <Col xs="12" md="10"><Input type="file" id="file-original" name="file-original" /></Col>
           </FormGroup>
+
+          {!this.state.edit && 
+            <FormGroup row>
+              <Col md="2"><Button type="submit" className="btn btn-outline-primary" onClick={this.viewText  }>View text</Button></Col>
+            </FormGroup>
+          }
         </Form>
 
         {this.state.edit && <Button type="submit" className="btn btn-outline-primary" onClick={this.toggleEdit}>Save</Button>}

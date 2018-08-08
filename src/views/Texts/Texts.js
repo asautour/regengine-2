@@ -18,7 +18,7 @@ export default class Texts extends Component {
       collapse: true,
       fadeIn: true,
       timeout: 300,
-      modal: false,
+      modal: false, 
     };
   }
 

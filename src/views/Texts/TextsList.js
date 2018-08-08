@@ -46,21 +46,21 @@ class TextsList extends Component {
               <Col xs="4">
                 <ListGroup id="list-tab" role="tablist" >
                   {
-                      txtData.map((text, index) => (
-                        this.renderListGroupItem(text, index)
-                      ))
-                    }
+                    txtData.map((text, index) => (
+                      this.renderListGroupItem(text, index)
+                    ))
+                  }
                 </ListGroup>
               </Col>
               <Col xs="8">
                 <TabContent activeTab={this.state.activeTab}>
                   {
-                      txtData.map((text, index) => (
-                        <TabPane tabId={index} key={text._id} >
-                          <TextsListItem text={text} />
-                        </TabPane>
-                      ))
-                    }
+                    txtData.map((text, index) => (
+                      <TabPane tabId={index} key={text._id} >
+                        <TextsListItem text={text} />
+                      </TabPane>
+                    ))
+                  }
                 </TabContent>
               </Col>
             </Row>
